@@ -53,30 +53,7 @@ dxr <- DEXSeq(
 )
 saveRDS(dxr, file = "~/../juicer/DEU/dxr.rds")
 
-dxr <- readRDS("./dxr.RDS")
-
-# Significant results
-table(dxr$padj < 0.1)
-
-# Order the subsetted data frame by padj in ascending order
-dxr_by_padj <- dxr[order(dxr$padj), ]
-
-length(unique(dxr_by_padj$groupID))
-
-# Subset by specific rank
-plotDEXSeq(
-  dxr,
-  unique(dxr_by_padj$groupID)[[5]],
-  legend = TRUE,
-  #cex.axis = 1,
-  #cex = 1,
-  #lwd = 1,
-  #displayTranscripts = TRUE,
-  names = TRUE,
-  norCounts = TRUE,
-  FDR = 0.1
-)
-
+# Make report
 DEXSeqHTML(
   dxr,
   FDR = 0.1,
