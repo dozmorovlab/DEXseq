@@ -1,18 +1,9 @@
 qrsh -pe smp 32
 cd ~/../juicer/retinal_organoids
 conda activate DEU
+source ./00_Stttings.sh
 
-threads=32
-
-accessions=(
-    SRR15435654
-    SRR15435653
-    SRR15435642
-    SRR15435629
-    SRR15435628
-    SRR15435627
-    SRR15435652
-)
+threads=$MAX_CPUS
 
 for accession in $accessions; do
     fasterq-dump $accession \

@@ -9,6 +9,16 @@
 conda init
 conda activate DEU
 
+accessions=(
+    SRR15435654
+    SRR15435653
+    SRR15435642
+    SRR15435629
+    SRR15435628
+    SRR15435627
+    SRR15435652
+)
+
 # RNA-seq directory
 RNA_SEQ_DIR=~/../juicer/DEU/retinal_organoids
 
